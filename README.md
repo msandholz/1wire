@@ -6,14 +6,4 @@ Raspbian hat die für den 1-Wire-Bus notwendigen Treiber bereits an Bord, wobei 
 /sys/devices/w1_bus_master/
 ```
 
-Die One-Wire-Schnittstelle muß in der Datei /boot/config.txt aktiviert, indem dort zwei Zeilen eingetragen werden:
-
-```
-dtoverlay=w1-gpio,gpiopin=4 
-```
-
-Damit wird der Pin 4 des GPIO für One Wire reserviert. Oder, falls noch der interne Pullup-Widerstand geschaltet werden soll:
-
-```
-dtoverlay=w1-gpio-pullup,gpiopin=4,extpullup=on
-```
+Die One-Wire-Schnittstelle muß über ```raspi-config``` --> ```5 Interface Options``` aktiviert werden.
